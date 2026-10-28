@@ -1,0 +1,50 @@
+# --- Gradle / Java
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+.kotlin/
+out/
+bin/
+*.class
+hs_err_pid*.log
+# old Maven output
+target/
+
+# --- Frontend (Next.js / pnpm)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/coverage/
+frontend/next-env.d.ts
+frontend/*.tsbuildinfo
+frontend/.pnpm-store/
+npm-debug.log*
+pnpm-debug.log*
+# generated from contract/api.yaml by `pnpm gen:api`
+frontend/src/lib/api/schema.d.ts
+
+# --- Python (scripts/)
+__pycache__/
+*.py[cod]
+
+# --- Secrets: never commit (only the names-only template is allowed)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+application-prod*.yml
+
+# --- IDE / OS
+.idea/
+*.iml
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+*.log
+
+# --- Personal, per-developer agent files (not shared)
+CLAUDE.local.md
+.claude/settings.local.json
+.remember/

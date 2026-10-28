@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "docs-fs": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./docs"
+      ],
+      "env": {}
+    },
+    "atlassian": {
+      "command": "uvx",
+      "args": [
+        "mcp-atlassian"
+      ],
+      "env": {
+        "JIRA_URL": "${JIRA_URL}",
+        "JIRA_PERSONAL_TOKEN": "${JIRA_PERSONAL_TOKEN}"
+      }
+    }
+  }
+}

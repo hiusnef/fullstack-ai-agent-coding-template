@@ -1,0 +1,4 @@
+{
+  "_comment": "Agents to generate config for. Options: claude, copilot, codex, antigravity, cursor. AGENTS.md is always generated.",
+  "targets": ["claude"]
+}

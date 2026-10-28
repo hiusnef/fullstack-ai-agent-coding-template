@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: sample-service API
+  version: 0.0.1
+  description: >-
+    Contract first: change this file before the controller. The frontend generates its
+    TypeScript types from it (`pnpm --dir frontend gen:api`; the backend implements it in `adapter-web`).
+servers:
+  - url: http://localhost:8080
+paths:
+  /v1/greetings/{name}:
+    get:
+      operationId: getGreeting
+      summary: Greet a known guest by name
+      description: "Greets a registered guest (greeting context) and counts the greeting. Unknown names return 404. Auth scope: none (public endpoint)."
+      security: []
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: "^[A-Za-z]{1,50}$"
+      responses:
+        "200":
+          description: Greeting
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GreetingResponse"
+        "400":
+          $ref: "#/components/responses/Problem"
+        "404":
+          $ref: "#/components/responses/Problem"
+components:
+  schemas:
+    GreetingResponse:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+          example: Hello, Ada!
+    ProblemDetail:
+      description: RFC 9457 problem details
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+  responses:
+    Problem:
+      description: Error
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/ProblemDetail"

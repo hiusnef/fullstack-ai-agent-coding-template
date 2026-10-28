@@ -1,0 +1,7 @@
+# Local development overrides. Secrets come from environment variables, never from this file.
+server:
+  port: 8080
+
+logging:
+  level:
+    io.hiusnef.sampleservice: DEBUG

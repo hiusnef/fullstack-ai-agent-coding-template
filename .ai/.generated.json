@@ -1,0 +1,18 @@
+[
+  ".claude/rules/api.md",
+  ".claude/rules/ddd.md",
+  ".claude/rules/frontend.md",
+  ".claude/rules/java-style.md",
+  ".claude/rules/testing.md",
+  ".claude/settings.json",
+  ".claude/skills/add-context/SKILL.md",
+  ".claude/skills/add-endpoint/SKILL.md",
+  ".claude/skills/add-page/SKILL.md",
+  ".claude/skills/code-review/SKILL.md",
+  ".claude/skills/fix-bug/SKILL.md",
+  ".claude/skills/write-adr/SKILL.md",
+  ".gitattributes",
+  ".mcp.json",
+  "AGENTS.md",
+  "CLAUDE.md"
+]

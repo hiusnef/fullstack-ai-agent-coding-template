@@ -1,0 +1,18 @@
+{
+  "_comment": "Placeholders like ${env:NAME} are allowed only inside 'env'. Keep secrets out of 'args'.",
+  "servers": {
+    "docs-fs": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./docs"],
+      "env": {}
+    },
+    "atlassian": {
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "env": {
+        "JIRA_URL": "${env:JIRA_URL}",
+        "JIRA_PERSONAL_TOKEN": "${env:JIRA_PERSONAL_TOKEN}"
+      }
+    }
+  }
+}
